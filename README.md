@@ -73,11 +73,11 @@ Performed in **`data_processing.ipynb`** using Python libraries:
 
 The project integrates with PostgreSQL to execute analytical queries for deeper air quality exploration.
 
-Folder `sql.scripts/` contains queries for data exploration and analysis:
- * `air_pollutant_share_by_type.sql` → Compares pollutant proportions by type
- * `countries_and_city_larger_zero.sql` → Filters valid countries/cities
- * `global_AQI_value_distribution.sql` → Analyzes global AQI range distributions
- * `pollutants_with_the_greatest_impact_on_global_average_AQI.sql` → Identifies major pollution drivers
+Folder [`sql_scripts/`](https://github.com/KANH12/Air-Quality-Analysis/tree/main/sql_scripts) contains queries for data exploration and analysis:
+ * [`air_pollutant_share_by_type.sql`](https://github.com/KANH12/Air-Quality-Analysis/blob/main/sql_scripts/air_pollutant_share_by_type.sql) → Compares pollutant proportions by type
+ * [`countries_and_city_larger_zero.sql`](https://github.com/KANH12/Air-Quality-Analysis/blob/main/sql_scripts/countries_and_city_larger_zero.sql) → Filters valid countries/cities
+ * [`global_AQI_value_distribution.sql`](https://github.com/KANH12/Air-Quality-Analysis/blob/main/sql_scripts/global_AQI_value_distribution.sql) → Analyzes global AQI range distributions
+ * [`pollutants_with_the_greatest_impact_on_global_average_AQI.sql`](https://github.com/KANH12/Air-Quality-Analysis/blob/main/sql_scripts/pollutants_with_the_greatest_impact_on_global_average_AQI.sql) → Identifies major pollution drivers
   
 💡 All SQL scripts operate on the cleaned dataset loaded into PostgreSQL from the ETL pipeline.
 
@@ -89,12 +89,12 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
 
 1. **Extract**
 
-   * Collected **`global_air_pollution_data.csv`** format from [**Global Air Quality dataset**](https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset)
+   * Collected [**`global_air_pollution_data.csv`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/global_air_pollution_data.csv) format from [**Global Air Quality dataset**](https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset)
    * The dataset includes pollutant readings (PM2.5, NO₂, CO, O₃), AQI values, and geographic metadata.
 
-2. **Transform**
+2. **Transform and Cleaning**
 
-   * Cleaned and standardized raw data using Python (Pandas) in **`data_processing.ipynb`**.
+   * Cleaned and standardized raw data using Python (Pandas) in [**`data_processing.ipynb`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/notebooks/data_processing.ipynb).
    * Task performed:
 
      * Handle missing values and rename columns
@@ -106,8 +106,8 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
 3. **Load**
    
    * Exported transformed data to:
-     * **`clean_air_quality.xlsx`** → used in Power BI for visualization
-     * **PostgreSQL** → used for intermediate SQL analysis (queries in **`/sql.scripts/`**)
+     * [**`clean_air_quality.xlsx`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/clean_air_quality.xlsx) → used in Power BI for visualization
+     * **PostgreSQL** → used for intermediate SQL analysis (queries in [**`/sql_scripts/`**](https://github.com/KANH12/Air-Quality-Analysis/tree/main/sql_scripts))
 
 4. **Visualize**
 
@@ -215,7 +215,7 @@ Data Analyst & Visualization Enthusiast
   *Overview Dashboard* ![Dashboard Overview](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/overview.png?raw=true)
     
   *Global Air Quality by Pollutant and Country* ![Pollutant Impact Dashboard](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/pollutant.png?raw=true)
-* Ensure the file paths are correct when connecting `clean_air_quality.xlsx` to Power BI.
+* Ensure the file paths are correct when connecting [`clean_air_quality.xlsx`](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/clean_air_quality.xlsx) to Power BI.
 
 ---
 
