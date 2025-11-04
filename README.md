@@ -74,10 +74,10 @@ Performed in **`data_processing.ipynb`** using Python libraries:
 The project integrates with PostgreSQL to execute analytical queries for deeper air quality exploration.
 
 Folder `sql.scripts/` contains queries for data exploration and analysis:
- * 'air_pollutant_share_by_type.sql' → Compares pollutant proportions by type
- * 'countries_and_city_larger_zero.sql' → Filters valid countries/cities
- * 'global_AQI_value_distribution.sql' → Analyzes global AQI range distributions
- * 'pollutants_with_the_greatest_impact_on_global_average_AQI.sql' → Identifies major pollution drivers
+ * `air_pollutant_share_by_type.sql` → Compares pollutant proportions by type
+ * `countries_and_city_larger_zero.sql` → Filters valid countries/cities
+ * `global_AQI_value_distribution.sql` → Analyzes global AQI range distributions
+ * `pollutants_with_the_greatest_impact_on_global_average_AQI.sql` → Identifies major pollution drivers
   
 💡 All SQL scripts operate on the cleaned dataset loaded into PostgreSQL from the ETL pipeline.
 
