@@ -89,7 +89,7 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
 
 1. **Extract**
 
-   * Collected **`global_air_pollution_data.csv`** format from [**Global Air Quality dataset**](`https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset`)
+   * Collected **`global_air_pollution_data.csv`** format from [**Global Air Quality dataset**](https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset)
    * The dataset includes pollutant readings (PM2.5, NO₂, CO, O₃), AQI values, and geographic metadata.
 
 2. **Transform**
