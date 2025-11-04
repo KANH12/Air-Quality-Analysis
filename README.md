@@ -2,19 +2,33 @@
 
 ## 📘 Overview
 
-This project provides a comprehensive **data visualization and analysis of global air quality** using **Power BI**.
-It combines raw pollutant data, data preprocessing scripts, and interactive dashboards to deliver key insights into air pollution trends across countries and cities worldwide.
+This project delivers a **comprehensive analysis and visualization of global air quality** using **Power BI** and **Python data preprocessing**.
+It combines raw pollutant data, data preprocessing scripts, SQL analysis, and interactive dashboards to deliver insights into global air pollution trends.
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── clean_air_quality.xlsx           # Cleaned dataset ready for Power BI import
-├── global_air_pollution_data.csv    # Original raw data (pollutant readings, AQI, etc.)
-├── data_processing.ipynb            # Jupyter notebook for data cleaning and transformation
-├── dashboard.pbix                   # Power BI file with dashboards
-└── README.md                        # Project documentation
+├── data/
+│   ├── global_air_pollution_data.csv    # Original raw data (pollutant readings, AQI, etc.)
+│   └── clean_air_quality.xlsx           # Cleaned dataset ready for Power BI import
+│
+├── notebooks/
+│   └── data_processing.ipynb            # Jupyter notebook for data cleaning and transformation
+│
+├── dashboard/
+│   ├── Project.pbix                     # Power BI dashboard file
+│   ├── overview.png                     # Screenshot of the Overview dashboard
+│   └── pollutant.png                    # Screenshot of the Pollutant Impact dashboard
+│
+├── sql.scripts/
+│   ├── air_pollutant_share_by_type.sql    
+│   ├── countries_and_city_larger_zero.sql
+│   ├── global_AQI_value_distribution.sql
+│   └── pollutants_with_the_greatest_impact_on_global_average_AQI.sql
+│
+└── README.md                            # Project documentation
 ```
 
 ---
@@ -25,27 +39,90 @@ It combines raw pollutant data, data preprocessing scripts, and interactive dash
 * Data fields include:
 
   * `Country`, `City`
-  * `PM2.5`, `Ozone`, `NO₂`, `CO`
-  * `AQI` and AQI category
-  * Timestamps and measurement details
+  * `Pollutant`
+
+    * `PM2.5 value`, `PM2.5 category`
+    * `Ozone`, `Ozone category`
+    * `NO₂`, `NO₂ category`
+    * `CO`, `CO category`
+
+  * `AQI` and `AQI category`
 
 ---
 
-## ⚙️ Data Processing
+## ⛮ Data Processing
 
-The **`data_processing.ipynb`** notebook performs the following key steps:
+Performed in **`data_processing.ipynb`** using Python libraries:
 
 1. **Data Cleaning**
+   * Renamed columns to standardized and readable names.
+   * Check duplicate value column `city`
+   * Handled missing values by removing, **particularly those with null Country fields**
+ 
+     * `Records with null Country values were removed because, although other columns (including City) had data, each city appeared only once in the raw dataset. Without national reference data or repeated city entries, it was impossible to determine the corresponding country, so these records were excluded.`
 
-   * Handles missing values, duplicates, and inconsistent units.
-   * Converts timestamps and standardizes pollutant concentration scales.
-2. **Data Transformation**
+   * Filtered out invalid or inconsistent data points to ensure data quality.
+2. **Data Transformation" 
+2. **Output** 
+  * Export cleaned dataset (**`clean_air_quality.xlsx`**)
+  * Loads the same dataset into PostgreSQL for SQL-based analysis.
 
-   * Computes **AQI values** per city and country.
-   * Aggregates pollutant averages for comparative visualization.
-3. **Output**
+---
 
-   * Saves a clean, analysis-ready dataset (`clean_air_quality.xlsx`) for Power BI.
+## 🗄️ Database Integration (PostgreSQL)
+
+The project integrates with PostgreSQL to execute analytical queries for deeper air quality exploration.
+
+Folder `sql.scripts/` contains queries for data exploration and analysis:
+ * 'air_pollutant_share_by_type.sql' → Compares pollutant proportions by type
+ * 'countries_and_city_larger_zero.sql' → Filters valid countries/cities
+ * 'global_AQI_value_distribution.sql' → Analyzes global AQI range distributions
+ * 'pollutants_with_the_greatest_impact_on_global_average_AQI.sql' → Identifies major pollution drivers
+  
+💡 All SQL scripts operate on the cleaned dataset loaded into PostgreSQL from the ETL pipeline.
+
+---
+
+## ⚙️ Data Pipeline Overview (ETLV)
+
+This project follows a complete ETLV (Extract – Transform – Load – Visualize) workflow that connects multiple tools for end-to-end data analysis.
+
+1. **Extract**
+
+   * Collected **`global_air_pollution_data.csv`** format from **public data sources**: (`https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset`)
+   * The dataset includes pollutant readings (PM2.5, NO₂, CO, O₃), AQI values, and geographic metadata.
+
+2. **Transform**
+
+   * Cleaned and standardized raw data using Python (Pandas) in **`data_processing.ipynb`**.
+   * Task performed:
+
+     * Handle missing values and rename columns
+     * Filter invalid values (to avoid meaningless or corrupted data)
+     * Prepare structured data for analysis
+   
+3. **Load**
+   
+   * Exported transformed data to:
+     * **`clean_air_quality.xlsx`** → used in Power BI for visualization
+     * **PostgreSQL** → used for intermediate SQL analysis (queries in **`/sql.scripts/`**)
+
+4. **Visualize**
+
+   * Built interactive dashboards in **Power BI** using the cleaned dataset.
+   * Dashboards highlight trends, pollutant impacts, and geographic air quality differences.
+
+---
+
+## 🔄 Workflow Summary
+
+                           Raw CSV
+                              ↓
+                Python (Cleaning & Transformation)
+                 ↓                             ↓
+    [1] PostgreSQL (SQL Analysis)       [2] Excel (.xlsx)
+                       ↓                    ↓
+                      Power BI (Visualization)
 
 ---
 
@@ -58,7 +135,7 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 ![Dashboard Overview](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/overview.png?raw=true)
 **Purpose:** Provide a global-level summary of air quality distribution.
 
-**Main Visuals:**
+**Key Visuals:**
 
 * **Country & City Filters:** Dynamic filtering by geography and AQI status.
 * **KPI Cards:**
@@ -77,7 +154,7 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 ![Pollutant Impact Dashboard](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/pollutant.png?raw=true)
 **Purpose:** Analyze air quality by pollutant types and their relative contributions.
 
-**Main Visuals:**
+**Key Visuals:**
 
 * **KPI Cards:**
 
@@ -89,28 +166,31 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 
 ---
 
-## 🧠 Insights
+## 🧠 Key Insights
 
-* Identify **regions with highest AQI levels** and potential pollution hotspots.
-* Compare **pollutant contributions** across different areas.
-* Track **average pollutant values** and AQI distributions over time or geography.
-* Enable **decision-makers** to prioritize air quality interventions.
+* Identify regions with highest AQI levels and pollution hotspots
+* Compare pollutant contributions across regions
+* Support data-driven environmental policy and awareness
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-* **Power BI** – for dashboard creation and visualization.
-* **Python (Pandas, NumPy, Matplotlib)** – for data cleaning and preprocessing.
-* **Excel / CSV** – for data storage and transformation.
+| Category       | Tools                     | Desciption 
+| -------------- | ------------------------- | -----------------
+| Visualization  | Power BI                  | Data visualization and dashboard building
+| Programming    | Python                    | Coding
+| Library        | (Pandas, NumPy)           | Data Transformation / Cleaning 
+| Data Formats   | Excel, CSV                | Data storage and export formats
+| Query Language | SQL (PostgreSQL, MySQL)   | SQL analysis and query execution
 
 ---
 
-## 📈 Future Enhancements
+## 🔮 Future Enhancements
 
-* Integration with real-time air quality APIs (e.g., OpenAQ).
-* Time-series forecasting of AQI using machine learning.
-* Regional comparison dashboards with user-defined filters.
+* Integrate real-time air quality data from public APIs to enable live dashboard updates.
+* Automate the ETL process using Python scripts and schedule with Apache Airflow or Cron.
+* Deploy the dashboard on Power BI Service or Streamlit for public accessibility.
 
 ---
 
