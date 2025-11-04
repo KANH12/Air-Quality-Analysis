@@ -35,7 +35,7 @@ It combines raw pollutant data, data preprocessing scripts, SQL analysis, and in
 
 ## 🧩 Data Sources
 
-* The dataset **`global_air_pollution_data.csv`** – includes pollutant concentration data (PM2.5, Ozone, NO₂, CO) and computed AQI for major global cities.
+* The dataset [**`global_air_pollution_data.csv`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/global_air_pollution_data.csv) – includes pollutant concentration data (PM2.5, Ozone, NO₂, CO) and computed AQI for major global cities.
 * Data fields include:
 
   * `Country`, `City`
