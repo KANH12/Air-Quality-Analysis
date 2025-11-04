@@ -127,6 +127,7 @@ Data Analyst & Visualization Enthusiast
 * Screenshots in this documentation correspond to the Power BI dashboard views:
 
   * Left: *Overview Dashboard* ![Overview Dashboard](https://raw.githubusercontent.com/KANH12/Air-Quality-Analysis/main/dashboard/overview.png)
+    
   * Right: *Global Air Quality by Pollutant and Country* ![Pollutant Impact Dashboard](https://raw.githubusercontent.com/KANH12/Air-Quality-Analysis/main/dashboard/pollutant.png)
 * Ensure the file paths are correct when connecting `clean_air_quality.xlsx` to Power BI.
 
