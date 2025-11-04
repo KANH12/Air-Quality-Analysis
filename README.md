@@ -42,11 +42,11 @@ It combines raw pollutant data, data preprocessing scripts, SQL analysis, and in
   * `Pollutant`
 
     * `PM2.5 value`, `PM2.5 category`
-    * `Ozone`, `Ozone category`
-    * `NO₂`, `NO₂ category`
-    * `CO`, `CO category`
+    * `Ozone value`, `Ozone category`
+    * `NO₂ value`, `NO₂ category`
+    * `CO value`, `CO category`
 
-  * `AQI` and `AQI category`
+  * `AQI value` and `AQI category`
 
 ---
 
