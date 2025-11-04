@@ -1,0 +1,9 @@
+requests
+pandas
+sqlalchemy
+openpyxl     
+#psycopg2
+#scikit-learn --upgrade
+#numpy --upgrade
+#seaborn
+#matplotlib
