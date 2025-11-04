@@ -13,7 +13,7 @@ It combines raw pollutant data, data preprocessing scripts, and interactive dash
 ├── clean_air_quality.xlsx           # Cleaned dataset ready for Power BI import
 ├── global_air_pollution_data.csv    # Original raw data (pollutant readings, AQI, etc.)
 ├── data_processing.ipynb            # Jupyter notebook for data cleaning and transformation
-├── dashboard.pbix                   # (Not included here) Power BI file with dashboards
+├── dashboard.pbix                   # Power BI file with dashboards
 └── README.md                        # Project documentation
 ```
 
