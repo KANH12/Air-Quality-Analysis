@@ -62,8 +62,8 @@ Performed in **`data_processing.ipynb`** using Python libraries:
      * `Records with null Country values were removed because, although other columns (including City) had data, each city appeared only once in the raw dataset. Without national reference data or repeated city entries, it was impossible to determine the corresponding country, so these records were excluded.`
 
    * Filtered out invalid or inconsistent data points to ensure data quality.
-2. **Data Transformation" 
-2. **Output** 
+2. **Data Transformation" – **Data without additional conversion**
+3. **Output** 
   * Export cleaned dataset (**`clean_air_quality.xlsx`**)
   * Loads the same dataset into PostgreSQL for SQL-based analysis.
 
@@ -100,6 +100,8 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
      * Handle missing values and rename columns
      * Filter invalid values (to avoid meaningless or corrupted data)
      * Prepare structured data for analysis
+     
+   *`No additional transformations were applied because the dataset already contained all required columns`*
    
 3. **Load**
    
@@ -116,13 +118,15 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
 
 ## 🔄 Workflow Summary
 
-                           Raw CSV
-                              ↓
-                Python (Cleaning & Transformation)
-                 ↓                             ↓
+                            Raw CSV 
+                               ↓
+                         Python (Cleaning)
+                         ↓               ↓
     [1] PostgreSQL (SQL Analysis)       [2] Excel (.xlsx)
                        ↓                    ↓
                       Power BI (Visualization)
+                      
+*Note: No additional transformation was applied as each city record was unique.*
 
 ---
 
@@ -137,13 +141,13 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 
 **Key Visuals:**
 
-* **Country & City Filters:** Dynamic filtering by geography and AQI status.
+* **Country & City & Status Filters:** Dynamic filtering by geography and AQI status.
 * **KPI Cards:**
 
   * Country count
   * City count
   * Average AQI
-* **Line Chart:** AQI distribution by value range.
+* **Area Chart:** AQI distribution by value range.
 * **Map Visualization:** Global AQI levels by region.
 * **Treemap:** Distribution of AQI categories (Good, Moderate, Unhealthy, etc.).
 
@@ -156,13 +160,15 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 
 **Key Visuals:**
 
+* **Country & City & Pollutants Filters:** Dynamic filtering by geography and each pollutant.
 * **KPI Cards:**
-
+  
+  * Countries and Cities recorded
   * Average PM2.5, Ozone, NO₂, CO concentrations
   * Active pollutants count
-* **Bar Chart:** Average pollutant values per pollutant type.
 * **Pie Chart:** Pollutant share by type.
-* **Interactive Filters:** Country, City, and Pollutant filters for drill-down exploration.
+* **Tree map:** Block size and color indicate average concentration, highlighting the major contributors to  air quality.
+
 
 ---
 
@@ -179,10 +185,10 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 | Category       | Tools                     | Desciption 
 | -------------- | ------------------------- | -----------------
 | Visualization  | Power BI                  | Data visualization and dashboard building
-| Programming    | Python                    | Coding
-| Library        | (Pandas, NumPy)           | Data Transformation / Cleaning 
+| Programming    | Python                    | Data preprocessing and scripting
+| Library        | Pandas, NumPy             | Data cleaning, manipulation, and analysis
 | Data Formats   | Excel, CSV                | Data storage and export formats
-| Query Language | SQL (PostgreSQL, MySQL)   | SQL analysis and query execution
+| Query Language | SQL (PostgreSQL, MySQL)   | Data querying and analysis
 
 ---
 
