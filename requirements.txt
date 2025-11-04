@@ -1,7 +1,7 @@
-requests
 pandas
 sqlalchemy
-openpyxl     
+openpyxl    
+#requests 
 #psycopg2
 #scikit-learn --upgrade
 #numpy --upgrade
