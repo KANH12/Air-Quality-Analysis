@@ -55,7 +55,7 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 
 ### **1. Overview Dashboard**
 
-![Overview Dashboard](https://raw.githubusercontent.com/KANH12/Air-Quality-Analysis/main/dashboard/overview.png)
+![Dashboard Overview](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/overview.png?raw=true)
 **Purpose:** Provide a global-level summary of air quality distribution.
 
 **Main Visuals:**
@@ -74,7 +74,7 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 
 ### **2. Pollutant Impact Dashboard**
 
-![Pollutant Impact Dashboard](https://raw.githubusercontent.com/KANH12/Air-Quality-Analysis/main/dashboard/pollutant.png)
+![Pollutant Impact Dashboard](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/pollutant.png?raw=true)
 **Purpose:** Analyze air quality by pollutant types and their relative contributions.
 
 **Main Visuals:**
@@ -126,9 +126,9 @@ Data Analyst & Visualization Enthusiast
 
 * Screenshots in this documentation correspond to the Power BI dashboard views:
 
-  * Left: *Overview Dashboard* ![Overview Dashboard](https://raw.githubusercontent.com/KANH12/Air-Quality-Analysis/main/dashboard/overview.png)
+  *Overview Dashboard* ![Dashboard Overview](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/overview.png?raw=true)
     
-  * Right: *Global Air Quality by Pollutant and Country* ![Pollutant Impact Dashboard](https://raw.githubusercontent.com/KANH12/Air-Quality-Analysis/main/dashboard/pollutant.png)
+  *Global Air Quality by Pollutant and Country* ![Pollutant Impact Dashboard](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/pollutant.png?raw=true)
 * Ensure the file paths are correct when connecting `clean_air_quality.xlsx` to Power BI.
 
 ---
