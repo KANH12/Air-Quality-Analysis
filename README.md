@@ -203,7 +203,9 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 ## 👨‍💻 Author
 
 **Khang [khngzx]**
+
 Data Analyst & Visualization Enthusiast
+
 📧 Contact: *baokhang1608@gmail.com*
 
 ---
