@@ -1,5 +1,10 @@
 # 🌍 Global Air Quality Dashboard – (Python-Power BI Project)
 
+![Python](https://img.shields.io/badge/Python-3.11.9-blue)
+![Power BI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
 ## 📘 Overview
 
 This project delivers a **comprehensive analysis and visualization of global air quality** using **Power BI** and **Python data preprocessing**.
@@ -22,7 +27,7 @@ It combines raw pollutant data, data preprocessing scripts, SQL analysis, and in
 │   ├── overview.png                     # Screenshot of the Overview dashboard
 │   └── pollutant.png                    # Screenshot of the Pollutant Impact dashboard
 │
-├── sql.scripts/
+├── sql_scripts/
 │   ├── air_pollutant_share_by_type.sql    
 │   ├── countries_and_city_larger_zero.sql
 │   ├── global_AQI_value_distribution.sql
@@ -30,6 +35,62 @@ It combines raw pollutant data, data preprocessing scripts, SQL analysis, and in
 │
 └── README.md                            # Project documentation
 ```
+
+---
+
+## ⚙️ Setup Environment
+
+Before running the project, make sure you have the following installed:
+
+  * **`Python (>=3.10 recommended)`** – [**Download**](https://www.python.org/downloads/)
+
+  * **`Jupyter Notebook`**:
+
+    * Option 1 (Recommend): Open the project folder in [VS Code](https://code.visualstudio.com/docs/setup/windows#_install-vs-code-on-windows), then open the notebook [**`data_processing.ipynb`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/notebooks/data_processing.ipynb).  
+
+    * Option 2 (Optional): Jupyter Notebook (web interface via CMD/Terminal)
+      
+      * Open cmd/terminal and run: **`pip install jupyter`**
+      * After install move on folder project with: **`cd path/to/Air-Quality-Analysis`**
+      * Run Notebook: **`jupyter notebook notebooks/data_processing.ipynb`**
+      * Run each cell to preprocess by using (Shift + Enter)
+
+  * **Required Python libraries**:
+    * All libraries are listed in requirements.txt → They will be automatically installed when running the notebook
+    * Or you can install them manually using: `pip install -r requirements.txt`
+
+  * **Power BI Desktop (for dashboards)** – [**Download**](https://www.microsoft.com/en-us/download/details.aspx?id=58494)
+
+  * **(Optional) PostgreSQL**: Needed only if you want to run SQL scripts in sql_scripts/.
+
+---
+
+## 📝 How to Use 
+
+I. **Terminal**
+  1. **Clone the repository**:   `      git clone https://github.com/KANH12/Air-Quality-Analysis.git      `
+
+  2. **Navigate to the project directory**:   `      cd Air-Quality-Analysis      `
+
+  3. **Check the raw data**
+
+     * Ensure the file [**`global_air_pollution_data.csv`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/global_air_pollution_data.csv) exists.
+     * This is the input dataset for all processing.
+
+II. **Open the Notebook**
+
+🗺️ Open the notebook file in one of the following ways:
+
+  * **Option A: Jupyter Notebook (Web Interface)**: 
+
+    - `jupyter notebook notebooks/data_processing.ipynb` → This will open the notebook in your default web browser.
+    - Run each cell (Shift + Enter) to preprocess and clean the data.
+    
+  * **Option B: Visual Studio Code**
+
+    - Open the folder in VS Code
+    - Open `notebooks/data_processing.ipynb`
+    - Run the notebook using the “Run All” button or `Shift + Enter` per cell.
 
 ---
 
@@ -52,7 +113,7 @@ It combines raw pollutant data, data preprocessing scripts, SQL analysis, and in
 
 ## ⛮ Data Processing
 
-Performed in **`data_processing.ipynb`** using Python libraries:
+Performed in [**`data_processing.ipynb`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/notebooks/data_processing.ipynb) using Python libraries:
 
 1. **Data Cleaning**
    * Renamed columns to standardized and readable names.
@@ -62,7 +123,7 @@ Performed in **`data_processing.ipynb`** using Python libraries:
      * `Records with null Country values were removed because, although other columns (including City) had data, each city appeared only once in the raw dataset. Without national reference data or repeated city entries, it was impossible to determine the corresponding country, so these records were excluded.`
 
    * Filtered out invalid or inconsistent data points to ensure data quality.
-2. **Data Transformation" – **Data without additional conversion**
+2. **Data Transformation** – **No additional data conversion was required.**
 3. **Output** 
   * Export cleaned dataset (**`clean_air_quality.xlsx`**)
   * Loads the same dataset into PostgreSQL for SQL-based analysis.
@@ -101,7 +162,7 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
      * Filter invalid values (to avoid meaningless or corrupted data)
      * Prepare structured data for analysis
      
-   *`No additional transformations were applied because the dataset already contained all required columns`*
+   *`No further transformation was required since the dataset already contained all necessary columns.`*
    
 3. **Load**
    
@@ -132,7 +193,7 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
 
 ## 📊 Power BI Dashboards
 
-The project contains two interactive dashboards, designed for **multi-dimensional analysis** of air quality metrics.
+The project contains two interactive dashboards, designed for multi-dimensional analysis that highlights key air quality metrics.
 
 ### **1. Overview Dashboard**
 
@@ -169,6 +230,13 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 * **Pie Chart:** Pollutant share by type.
 * **Tree map:** Block size and color indicate average concentration, highlighting the major contributors to  air quality.
 
+---
+
+## 📦 Output Files
+
+  * **Excel**: [**`clean_air_quality.xlsx`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/clean_air_quality.xlsx) 
+  * **SQL**: [`sql_scripts/`](https://github.com/KANH12/Air-Quality-Analysis/tree/main/sql_scripts) runs on PostgreSQL
+  * **Power BI**: [dashboard.pbix](https://github.com/KANH12/Air-Quality-Analysis/blob/main/dashboard/dashboard.pbix) 
 
 ---
 
@@ -202,12 +270,13 @@ The project contains two interactive dashboards, designed for **multi-dimensiona
 
 ## 👨‍💻 Author
 
-**Khang [khngzx]**
+**Bao Khang [Khngzxz]**
 
 Data Analyst & Visualization Enthusiast
 
-📧 Contact: *baokhang1608@gmail.com*
-
+📧 Contact: 
+ * 🔗 Gmail: *baokhang1608@gmail.com*
+ * 🔗 GitHub: [KANH12](https://github.com/KANH12)
 ---
 
 ## 📎 Notes
@@ -221,4 +290,4 @@ Data Analyst & Visualization Enthusiast
 
 ---
 
-**© 2025 Khang – All Rights Reserved**
+**© 2025 Khang – All rights reserved**
