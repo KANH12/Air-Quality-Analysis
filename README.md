@@ -8,7 +8,7 @@
 ## 📘 Overview
 
 This project delivers a **comprehensive analysis and visualization of global air quality** using **Power BI** and **Python data preprocessing**.
-It combines raw pollutant data, data preprocessing scripts, SQL analysis, and interactive dashboards to deliver insights into global air pollution trends.
+It integrates raw pollutant data, data preprocessing scripts, SQL analysis, and interactive dashboards to deliver insights into global air pollution trends.
 
 ---
 
@@ -98,6 +98,8 @@ II. **Open the Notebook**
 
 ---
 
+---
+
 ## 🧩 Data Sources
 
 * The dataset [**`global_air_pollution_data.csv`**](https://github.com/KANH12/Air-Quality-Analysis/blob/main/data/global_air_pollution_data.csv) – includes pollutant concentration data (PM2.5, Ozone, NO₂, CO) and computed AQI for major global cities.
@@ -127,7 +129,7 @@ Performed in [**`data_processing.ipynb`**](https://github.com/KANH12/Air-Quality
      * `Records with null Country values were removed because, although other columns (including City) had data, each city appeared only once in the raw dataset. Without national reference data or repeated city entries, it was impossible to determine the corresponding country, so these records were excluded.`
 
    * Filtered out invalid or inconsistent data points to ensure data quality.
-2. **Data Transformation** – **No additional data conversion was required.**
+2. **Data Transformation** – **No additional transformation was applied as each city record was unique.**
 3. **Output** 
   * Export cleaned dataset (**`clean_air_quality.xlsx`**)
   * Loads the same dataset into PostgreSQL for SQL-based analysis.
@@ -190,8 +192,6 @@ This project follows a complete ETLV (Extract – Transform – Load – Visuali
     [1] PostgreSQL (SQL Analysis)       [2] Excel (.xlsx)
                        ↓                    ↓
                       Power BI (Visualization)
-                      
-*Note: No additional transformation was applied as each city record was unique.*
 
 ---
 
@@ -244,17 +244,41 @@ The project contains two interactive dashboards, designed for multi-dimensional 
 
 ---
 
-## 🧠 Key Insights
+## 🌍 Key Insights
 
-* Identify regions with highest AQI levels and pollution hotspots
-* Compare pollutant contributions across regions
-* Support data-driven environmental policy and awareness
+🟦 Key Insight 1 – Global Air Quality Stability
+
+* The global average AQI is **72.34**, which falls within the **Moderate** range.
+* **Most countries maintain relatively low AQI levels**, indicating overall stable and acceptable air quality worldwide.
+
+🟥 Key Insight 2 – AQI Distribution Patterns
+
+* **Most countries have AQI values below 100**, concentrated in the lower range.
+* Only a few countries exceed **AQI 200**, meaning severe pollution events are **geographically limited** rather than globally widespread.
+
+🟨 Key Insight 3 – Pollutant Composition
+
+* **PM2.5 dominates**, contributing **63.9%** of total air contamination.
+* **Ozone (33.3%)** is the second largest contributor.
+* **NO₂ and CO** have minor shares, showing that **fine particulate matter and ozone are key global air quality concerns**.
+
+🟩 Key Insight 4 – Pollutant Severity
+
+* **PM2.5** has the **highest average concentration (68.88 µg/m³)** — nearly double that of **Ozone (35.23 µg/m³)**.
+* This highlights **serious health risks** from fine particles, especially in **urban and industrial regions**.
+
+🟪 Key Insight 5 – Global Coverage & Data Scope
+
+* Dataset includes **175 countries** and **over 23,000 cities**, ensuring broad global coverage.
+* Such scale enhances the **reliability of insights** on worldwide air quality trends.
+
+→ **Overall, while global air quality appears moderately stable, the dominance of PM2.5 and Ozone indicates that ongoing monitoring and pollution control remain essential to sustain healthy atmospheric conditions.**
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-| Category       | Tools                     | Desciption 
+| Category       | Tools                     | Description 
 | -------------- | ------------------------- | -----------------
 | Visualization  | Power BI                  | Data visualization and dashboard building
 | Programming    | Python                    | Data preprocessing and scripting
@@ -294,4 +318,4 @@ The project contains two interactive dashboards, designed for multi-dimensional 
 
 ---
 
-**© 2025 Khang – All rights reserved**
+**© 2025 Le Nguyen Bao Khang – All rights reserved**
