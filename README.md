@@ -56,7 +56,11 @@ Before running the project, make sure you have the following installed:
       * Run each cell to preprocess by using (Shift + Enter)
 
   * **Required Python libraries**:
-    * All libraries are listed in requirements.txt → They will be automatically installed when running the notebook
+    * All libraries are listed in requirements.txt, including
+      * pandas 
+      * sqlalchemy
+      * openpyxl 
+    * They will be automatically installed when running the notebook
     * Or you can install them manually using: `pip install -r requirements.txt`
 
   * **Power BI Desktop (for dashboards)** – [**Download**](https://www.microsoft.com/en-us/download/details.aspx?id=58494)
@@ -270,13 +274,13 @@ The project contains two interactive dashboards, designed for multi-dimensional 
 
 ## 👨‍💻 Author
 
-**Bao Khang [Khngzxz]**
+**Le Nguyen Bao Khang [Khngzxz]**
 
-Data Analyst & Visualization Enthusiast
+*Data Analyst | Skilled in Python, SQL & Power BI*
 
-📧 Contact: 
- * 🔗 Gmail: *baokhang1608@gmail.com*
- * 🔗 GitHub: [KANH12](https://github.com/KANH12)
+ * 📧 **baokhang1608@gmail.com**
+ * 🔗 [GitHub](https://github.com/KANH12) |  [Linkedln](https://www.linkedin.com/in/khang-le-310131329/)
+   
 ---
 
 ## 📎 Notes
